@@ -1,3 +1,9 @@
 # Credential file #
 ###################
 credentials.py
+
+# Downloaded and created files #
+################################
+*.json
+*.csv
+*.db
