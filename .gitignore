@@ -7,3 +7,4 @@ credentials.py
 *.json
 *.csv
 *.db
+*.png

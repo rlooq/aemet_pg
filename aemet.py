@@ -8,6 +8,7 @@ import time
 
 # Login information from external file
 import credentials
+from dber import *
 
 # Request information
 url = "https://opendata.aemet.es/opendata/api/observacion/convencional/datos/estacion/3194U"
@@ -47,6 +48,10 @@ try:
 		print("Time: {}\tMax: {}\t Min: {}".format(str(k.split(sep="T")), v[0], v[1]))
 
 	print("\nExtremes for this period:\nHigh:\t {} degrees.\nLow:\t {} degrees.".format(max(maxlist), min(minlist)))
+	
+	# Read and plot the JSON file
+	plot_json(read_json("data_aemet_{}.json".format(hoy)))
+
 except HTTPError as http_err:
     print('HTTP error occurred: {}'.format(http_err))
 except Exception as err:
