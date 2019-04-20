@@ -1,3 +1,5 @@
+'''Same as air_quality.py but with functions'''
+
 import time
 import json
 import requests as req

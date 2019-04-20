@@ -13,16 +13,16 @@ def read_json(json_file):
 
 def plot_json(df):
     times=[i.split("T")[1][:-6] for i in df.fint]
-    plt.plot(times, df["tamax"], color="orange", label="Highs")
-    plt.plot(times, df["tamin"], color="blue", label="Lows")
+    plt.plot(times, df["ta"], color="orange", label="Highs")
+    plt.plot(times, df["vv"], color="blue", label="Wind Speed")
     plt.legend()
     plt.xlabel("Last 24h")
-    plt.ylabel("Temperatures")
-    plt.title("Temperatures in C. Universitaria - {}".format(df.fint[23]))
+    plt.ylabel("Temperature (ºC) and Wind Speed (km/h)")
+    plt.title("Temperatures and Wind Speed in C. UNIVERSITARIA - {}".format(df.iloc[-1, 3]))
     plt.grid(True)
     plt.show()
 
-
+# Just creats DB, need to figure out how to update it with new data
 def create_db(df):
     conn=sqlite3.connect("aemet.db")
     df.to_sql("cuniv", conn)
@@ -30,7 +30,7 @@ def create_db(df):
 
 
 if __name__ == "__main__":
-    j=read_json("data_aemet_20190419-152858.json")
+    j=read_json("data_aemet_20190420-102259.json")
     #create_db(j)
     plot_json(j)
     

@@ -1,4 +1,4 @@
-"""Download boletin diario of Madrid pollution"""
+"""Downloads boletin diario of Madrid pollution in PDF format"""
 
 import sys
 import requests as req

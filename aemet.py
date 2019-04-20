@@ -1,5 +1,5 @@
-'''A script to download weather data from the last 24 hour in the C. Univ station.
-   The data are saved to a json file for now. Aiming at creating a DB at some point.'''
+'''A script to download weather data for the last 24 hour from the C. Univ station.
+   The data are saved to a json file and the temperature/wind speed are plotted.'''
 
 import requests
 from requests.exceptions import HTTPError
@@ -60,5 +60,5 @@ else:
         print('\nEverything went well!')
 
 
-# To do: load the data from this json file and save it to a sqlite db, or an excel or csv
-# so as to use it later to generate graphics and statistics
+# TO-DOs: Create a DB to populate regularly with the data gathered here,
+# so as to use it later to generate graphics and statistics.
