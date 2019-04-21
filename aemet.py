@@ -50,7 +50,9 @@ try:
 	print("\nExtremes for this period:\nHigh:\t {} degrees.\nLow:\t {} degrees.".format(max(maxlist), min(minlist)))
 	
 	# Read and plot the JSON file
-	plot_json(read_json("data_aemet_{}.json".format(hoy)))
+	j=read_json("data_aemet_{}.json".format(hoy))
+	plot_json(j)
+	update_db(j)
 
 except HTTPError as http_err:
     print('HTTP error occurred: {}'.format(http_err))
@@ -58,7 +60,3 @@ except Exception as err:
     print('Other error occurred: {}'.format(err))
 else:
         print('\nEverything went well!')
-
-
-# TO-DOs: Create a DB to populate regularly with the data gathered here,
-# so as to use it later to generate graphics and statistics.
