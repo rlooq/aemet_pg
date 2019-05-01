@@ -6,7 +6,7 @@ from requests.exceptions import HTTPError
 import json
 import time
 
-# Login information from external file
+# Login information from external file and functions from dber.py
 import credentials
 from dber import *
 
