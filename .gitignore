@@ -9,3 +9,4 @@ credentials.py
 *.db
 *.png
 *.txt
+downloaded_data/

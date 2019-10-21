@@ -1,4 +1,4 @@
-'''Module to fetch data from JSON file, plot them and save them to a sqlite3 database'''
+'''Functions to fetch data from JSON file, plot them and save them to a sqlite3 database'''
 
 import pandas as pd
 import sqlite3
@@ -22,7 +22,7 @@ def plot_json(df):
     plt.legend()
     plt.xlabel("Last 24h")
     plt.ylabel("Temperature (ºC) and Wind Speed (km/h)")
-    plt.title("Temperatures and Wind Speed in C. UNIVERSITARIA - {}".format(datadate))
+    plt.title("Temperature and Wind Speed in C. UNIVERSITARIA - {}h".format(datadate))
     plt.grid(True)
     #plt.show()
     plt.savefig("graph_{}.png".format(datadate))
